@@ -1,0 +1,2304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Puckeridge Gardener | Gardening & Landscaping</title>
+
+<meta name="description" content="Puckeridge Gardener — professional gardening, landscaping, fencing, patios, decking and garden maintenance in Buntingford and surrounding areas.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --green:#173b2a;
+    --green2:#24583d;
+    --green3:#2f7650;
+    --cream:#f5f1e8;
+    --cream2:#ebe5d6;
+    --white:#ffffff;
+    --dark:#111815;
+    --text:#59645d;
+    --gold:#c8a96b;
+    --shadow:0 20px 60px rgba(10,35,23,.12);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"DM Sans",sans-serif;
+    background:#fff;
+    color:var(--dark);
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+/* =========================
+   DEMO NOTICE
+========================= */
+
+.demo-bar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:#d4b15d;
+    color:#172018;
+    text-align:center;
+    padding:10px 15px;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:1.3px;
+    z-index:9999;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    position:fixed;
+    top:39px;
+    left:0;
+    width:100%;
+    z-index:999;
+    padding:18px 5%;
+    transition:.35s;
+}
+
+.navbar.scrolled{
+    background:rgba(16,42,29,.94);
+    backdrop-filter:blur(15px);
+    padding:13px 5%;
+}
+
+.nav-inner{
+    max-width:1250px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:white;
+}
+
+.logo-mark{
+    width:44px;
+    height:44px;
+    border:1px solid rgba(255,255,255,.55);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+}
+
+.logo-text{
+    line-height:1;
+}
+
+.logo-text strong{
+    display:block;
+    font-family:"Playfair Display",serif;
+    font-size:21px;
+    letter-spacing:.4px;
+}
+
+.logo-text span{
+    font-size:9px;
+    letter-spacing:2px;
+    opacity:.75;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:30px;
+    color:white;
+    font-size:13px;
+    font-weight:600;
+}
+
+.nav-links a{
+    position:relative;
+}
+
+.nav-links a:after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-7px;
+    width:0;
+    height:2px;
+    background:var(--gold);
+    transition:.3s;
+}
+
+.nav-links a:hover:after{
+    width:100%;
+}
+
+.nav-quote{
+    background:white;
+    color:var(--green);
+    padding:12px 20px;
+    border-radius:30px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.nav-quote:hover{
+    transform:translateY(-2px);
+    background:var(--gold);
+    color:#15251a;
+}
+
+.menu-btn{
+    display:none;
+    color:white;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    position:relative;
+    display:flex;
+    align-items:center;
+    background:
+        linear-gradient(90deg,rgba(8,27,17,.86),rgba(8,27,17,.42),rgba(8,27,17,.25)),
+        url("https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=2200&q=90")
+        center/cover;
+    color:white;
+}
+
+.hero-content{
+    width:min(1250px,90%);
+    margin:100px auto 0;
+}
+
+.hero-small{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:#e4d29d;
+    font-size:12px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.hero-small:before{
+    content:"";
+    width:42px;
+    height:1px;
+    background:var(--gold);
+}
+
+.hero h1{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(55px,7vw,100px);
+    line-height:.95;
+    max-width:850px;
+    font-weight:600;
+    letter-spacing:-3px;
+}
+
+.hero h1 span{
+    color:#d8c68f;
+}
+
+.hero-description{
+    max-width:580px;
+    margin-top:28px;
+    font-size:17px;
+    line-height:1.8;
+    color:rgba(255,255,255,.82);
+}
+
+.hero-buttons{
+    display:flex;
+    gap:14px;
+    margin-top:35px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    padding:15px 25px;
+    border-radius:40px;
+    font-size:14px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:#e5d39a;
+    color:#173523;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 30px rgba(0,0,0,.25);
+}
+
+.btn-outline{
+    border:1px solid rgba(255,255,255,.55);
+    color:white;
+}
+
+.btn-outline:hover{
+    background:white;
+    color:var(--green);
+}
+
+.hero-bottom{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    padding:25px 5%;
+    background:rgba(8,25,16,.55);
+    backdrop-filter:blur(8px);
+}
+
+.hero-stats{
+    max-width:1250px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.stat{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    color:white;
+}
+
+.stat-number{
+    font-family:"Playfair Display",serif;
+    font-size:28px;
+    color:#e2d19b;
+}
+
+.stat-label{
+    font-size:11px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    opacity:.7;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+section{
+    padding:110px 5%;
+}
+
+.container{
+    width:min(1250px,100%);
+    margin:auto;
+}
+
+.section-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    color:var(--green3);
+    text-transform:uppercase;
+    font-size:11px;
+    letter-spacing:2.5px;
+    font-weight:800;
+    margin-bottom:17px;
+}
+
+.section-tag:before{
+    content:"";
+    width:32px;
+    height:1px;
+    background:var(--gold);
+}
+
+.section-title{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(38px,5vw,65px);
+    line-height:1.05;
+    color:var(--green);
+    max-width:750px;
+}
+
+.section-text{
+    color:var(--text);
+    line-height:1.8;
+    max-width:650px;
+    margin-top:20px;
+}
+
+/* =========================
+   INTRO
+========================= */
+
+.intro{
+    background:var(--cream);
+}
+
+.intro-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.intro-image{
+    position:relative;
+}
+
+.intro-image img{
+    height:570px;
+    object-fit:cover;
+    border-radius:4px;
+}
+
+.image-card{
+    position:absolute;
+    right:-35px;
+    bottom:30px;
+    background:white;
+    padding:24px 27px;
+    box-shadow:var(--shadow);
+    max-width:230px;
+}
+
+.image-card strong{
+    font-family:"Playfair Display",serif;
+    font-size:25px;
+    color:var(--green);
+}
+
+.image-card p{
+    font-size:12px;
+    color:var(--text);
+    margin-top:5px;
+}
+
+.check-list{
+    margin-top:30px;
+    display:grid;
+    gap:15px;
+}
+
+.check{
+    display:flex;
+    gap:13px;
+    align-items:center;
+    font-size:14px;
+    font-weight:600;
+    color:#344139;
+}
+
+.check-icon{
+    width:25px;
+    height:25px;
+    border-radius:50%;
+    background:#d9e5d6;
+    color:var(--green);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:13px;
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.services{
+    background:white;
+}
+
+.services-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    gap:30px;
+    margin-bottom:55px;
+}
+
+.services-head .section-text{
+    margin:0;
+    max-width:450px;
+}
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.service-card{
+    position:relative;
+    min-height:330px;
+    overflow:hidden;
+    border-radius:3px;
+    color:white;
+}
+
+.service-card img{
+    position:absolute;
+    inset:0;
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.service-card:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(0deg,rgba(8,25,16,.9),rgba(8,25,16,.1));
+}
+
+.service-card:hover img{
+    transform:scale(1.07);
+}
+
+.service-content{
+    position:absolute;
+    bottom:0;
+    left:0;
+    z-index:2;
+    padding:28px;
+}
+
+.service-icon{
+    font-size:30px;
+    margin-bottom:12px;
+}
+
+.service-content h3{
+    font-family:"Playfair Display",serif;
+    font-size:28px;
+    margin-bottom:8px;
+}
+
+.service-content p{
+    font-size:13px;
+    line-height:1.6;
+    color:rgba(255,255,255,.75);
+}
+
+/* =========================
+   FULL WIDTH BANNER
+========================= */
+
+.banner{
+    min-height:520px;
+    display:flex;
+    align-items:center;
+    background:
+        linear-gradient(90deg,rgba(16,50,31,.9),rgba(16,50,31,.38)),
+        url("https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&w=2200&q=90")
+        center/cover;
+    color:white;
+}
+
+.banner-content{
+    max-width:650px;
+}
+
+.banner .section-tag{
+    color:#dfcf96;
+}
+
+.banner h2{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(42px,6vw,72px);
+    line-height:1;
+}
+
+.banner p{
+    margin:24px 0 30px;
+    line-height:1.8;
+    color:rgba(255,255,255,.78);
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery{
+    background:var(--cream);
+}
+
+.gallery-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    margin-bottom:45px;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:1.2fr .8fr .8fr;
+    grid-auto-rows:260px;
+    gap:15px;
+}
+
+.gallery-item{
+    overflow:hidden;
+    position:relative;
+}
+
+.gallery-item:first-child{
+    grid-row:span 2;
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.06);
+}
+
+.gallery-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(0deg,rgba(8,30,17,.75),transparent 60%);
+    opacity:0;
+    transition:.3s;
+    display:flex;
+    align-items:end;
+    padding:22px;
+    color:white;
+}
+
+.gallery-item:hover .gallery-overlay{
+    opacity:1;
+}
+
+.gallery-overlay strong{
+    font-family:"Playfair Display",serif;
+    font-size:22px;
+}
+
+/* =========================
+   WHY US
+========================= */
+
+.why{
+    background:var(--green);
+    color:white;
+}
+
+.why .section-title{
+    color:white;
+}
+
+.why .section-tag{
+    color:#d9c78f;
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:1px;
+    margin-top:60px;
+    border:1px solid rgba(255,255,255,.12);
+}
+
+.why-card{
+    padding:40px 28px;
+    border-right:1px solid rgba(255,255,255,.12);
+}
+
+.why-card:last-child{
+    border-right:0;
+}
+
+.why-icon{
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+.why-card h3{
+    font-family:"Playfair Display",serif;
+    font-size:24px;
+    margin-bottom:12px;
+}
+
+.why-card p{
+    color:rgba(255,255,255,.65);
+    font-size:13px;
+    line-height:1.7;
+}
+
+/* =========================
+   AREAS
+========================= */
+
+.areas{
+    background:white;
+}
+
+.areas-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+    align-items:center;
+}
+
+.area-image img{
+    height:500px;
+    object-fit:cover;
+}
+
+.area-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:13px;
+    margin-top:30px;
+}
+
+.area{
+    padding:17px;
+    border:1px solid #e5e5df;
+    font-weight:600;
+    color:var(--green);
+    background:#fafaf6;
+}
+
+.area span{
+    color:var(--gold);
+    margin-right:7px;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+    padding:80px 5%;
+    background:#e6dfc9;
+}
+
+.cta-box{
+    max-width:1250px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+}
+
+.cta h2{
+    font-family:"Playfair Display",serif;
+    color:var(--green);
+    font-size:clamp(35px,4vw,55px);
+}
+
+.cta p{
+    margin-top:10px;
+    color:#657064;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+    background:var(--cream);
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:70px;
+}
+
+.contact-details{
+    margin-top:35px;
+    display:grid;
+    gap:22px;
+}
+
+.contact-item{
+    display:flex;
+    gap:15px;
+    align-items:flex-start;
+}
+
+.contact-icon{
+    width:43px;
+    height:43px;
+    background:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+}
+
+.contact-item strong{
+    display:block;
+    color:var(--green);
+    margin-bottom:4px;
+}
+
+.contact-item span{
+    color:var(--text);
+    font-size:14px;
+}
+
+.contact-form{
+    background:white;
+    padding:40px;
+    box-shadow:var(--shadow);
+}
+
+.contact-form h3{
+    font-family:"Playfair Display",serif;
+    color:var(--green);
+    font-size:32px;
+    margin-bottom:25px;
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+input,
+textarea,
+select{
+    width:100%;
+    border:1px solid #dddcd3;
+    padding:15px;
+    margin-bottom:15px;
+    font-family:inherit;
+    font-size:14px;
+    outline:none;
+    background:#fbfbf8;
+}
+
+textarea{
+    min-height:130px;
+    resize:vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+    border-color:var(--green3);
+}
+
+.form-button{
+    border:0;
+    cursor:pointer;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#0d2016;
+    color:white;
+    padding:55px 5% 25px;
+}
+
+.footer-grid{
+    max-width:1250px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr;
+    gap:50px;
+    padding-bottom:45px;
+    border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.footer-brand p{
+    max-width:390px;
+    color:rgba(255,255,255,.55);
+    line-height:1.7;
+    font-size:13px;
+    margin-top:15px;
+}
+
+.footer-col h4{
+    color:#d6c58e;
+    font-size:12px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    margin-bottom:18px;
+}
+
+.footer-col a{
+    display:block;
+    color:rgba(255,255,255,.65);
+    font-size:13px;
+    margin-bottom:10px;
+}
+
+.footer-bottom{
+    max-width:1250px;
+    margin:22px auto 0;
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    color:rgba(255,255,255,.4);
+    font-size:11px;
+}
+
+/* =========================
+   FLOAT CALL
+========================= */
+
+.float-call{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:#c9b271;
+    color:#132319;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:23px;
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+    z-index:500;
+    transition:.3s;
+}
+
+.float-call:hover{
+    transform:scale(1.08);
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(35px);
+    transition:opacity .8s ease,transform .8s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+    .nav-links{
+        position:absolute;
+        top:75px;
+        right:5%;
+        width:250px;
+        background:#173b2a;
+        padding:25px;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:20px;
+        border-radius:5px;
+        display:none;
+        box-shadow:0 20px 40px rgba(0,0,0,.2);
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .nav-quote{
+        display:none;
+    }
+
+    .hero{
+        min-height:850px;
+    }
+
+    .hero h1{
+        letter-spacing:-2px;
+    }
+
+    .hero-stats{
+        overflow:auto;
+        justify-content:flex-start;
+    }
+
+    .intro-grid,
+    .areas-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
+        gap:45px;
+    }
+
+    .services-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .why-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .gallery-item:first-child{
+        grid-row:span 1;
+    }
+
+    .cta-box{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .demo-bar{
+        font-size:9px;
+        padding:9px 5px;
+    }
+
+    .navbar{
+        top:32px;
+        padding:13px 5%;
+    }
+
+    .logo-text strong{
+        font-size:17px;
+    }
+
+    .logo-mark{
+        width:38px;
+        height:38px;
+    }
+
+    .hero-content{
+        margin-top:80px;
+    }
+
+    .hero h1{
+        font-size:52px;
+    }
+
+    .hero-description{
+        font-size:14px;
+    }
+
+    .hero-bottom{
+        padding:17px 5%;
+    }
+
+    .stat-number{
+        font-size:22px;
+    }
+
+    .stat-label{
+        font-size:9px;
+    }
+
+    section{
+        padding:75px 5%;
+    }
+
+    .services-head,
+    .gallery-head{
+        display:block;
+    }
+
+    .services-head .section-text{
+        margin-top:20px;
+    }
+
+    .services-grid{
+        grid-template-columns:1fr;
+    }
+
+    .why-grid{
+        grid-template-columns:1fr;
+    }
+
+    .why-card{
+        border-right:0;
+        border-bottom:1px solid rgba(255,255,255,.12);
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr;
+        grid-auto-rows:260px;
+    }
+
+    .area-list{
+        grid-template-columns:1fr;
+    }
+
+    .intro-image img,
+    .area-image img{
+        height:400px;
+    }
+
+    .image-card{
+        right:15px;
+        bottom:15px;
+    }
+
+    .form-row{
+        grid-template-columns:1fr;
+    }
+
+    .contact-form{
+        padding:25px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- DEMO NOTICE -->
+<div class="demo-bar">
+    🌿 DEMO WEBSITE • DESIGN CONCEPT • NOT THE OFFICIAL PUCKERIDGE GARDENER WEBSITE 🌿
+</div>
+
+
+<!-- NAVIGATION -->
+
+<header class="navbar" id="navbar">
+
+    <div class="nav-inner">
+
+        <a href="#" class="logo">
+
+            <div class="logo-mark">
+                🌿
+            </div>
+
+            <div class="logo-text">
+                <strong>Puckeridge Gardener</strong>
+                <span>BUNTINGFORD • HERTFORDSHIRE</span>
+            </div>
+
+        </a>
+
+        <nav class="nav-links" id="navLinks">
+
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#gallery">Our Work</a>
+            <a href="#areas">Areas</a>
+            <a href="#contact">Contact</a>
+
+            <a href="#contact" class="nav-quote">
+                Get a Quote →
+            </a>
+
+        </nav>
+
+        <div class="menu-btn" id="menuBtn">
+            ☰
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-small">
+            Garden Care • Landscaping • Outdoor Spaces
+        </div>
+
+        <h1>
+            Bringing your
+            <span>garden</span>
+            to life.
+        </h1>
+
+        <p class="hero-description">
+            Professional gardening, landscaping and outdoor improvement
+            services designed to make your garden look its very best.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#contact" class="btn btn-primary">
+                Request a Free Quote →
+            </a>
+
+            <a href="tel:07948757898" class="btn btn-outline">
+                ☎ 07948 757898
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-bottom">
+
+        <div class="hero-stats">
+
+            <div class="stat">
+
+                <div class="stat-number">
+                    5.0★
+                </div>
+
+                <div class="stat-label">
+                    Rated Service
+                </div>
+
+            </div>
+
+            <div class="stat">
+
+                <div class="stat-number">
+                    5+
+                </div>
+
+                <div class="stat-label">
+                    Reviews
+                </div>
+
+            </div>
+
+            <div class="stat">
+
+                <div class="stat-number">
+                    100%
+                </div>
+
+                <div class="stat-label">
+                    Garden Focused
+                </div>
+
+            </div>
+
+            <div class="stat">
+
+                <div class="stat-number">
+                    Local
+                </div>
+
+                <div class="stat-label">
+                    Buntingford
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="intro" id="about">
+
+    <div class="container intro-grid">
+
+        <div class="intro-image reveal">
+
+            <img
+                src="https://images.unsplash.com/photo-1558521958-0a228e77e984?auto=format&fit=crop&w=1400&q=90"
+                alt="Beautiful landscaped garden"
+            >
+
+            <div class="image-card">
+
+                <strong>Garden Care</strong>
+
+                <p>
+                    From regular maintenance to complete outdoor transformations.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="reveal">
+
+            <div class="section-tag">
+                Puckeridge Gardener
+            </div>
+
+            <h2 class="section-title">
+                Beautiful gardens.
+                Carefully created.
+            </h2>
+
+            <p class="section-text">
+                Whether your garden needs a simple tidy-up, regular maintenance
+                or a complete transformation, Puckeridge Gardener provides a
+                range of practical outdoor services for homes around Buntingford.
+            </p>
+
+            <div class="check-list">
+
+                <div class="check">
+                    <div class="check-icon">✓</div>
+                    Garden tidy-ups & maintenance
+                </div>
+
+                <div class="check">
+                    <div class="check-icon">✓</div>
+                    Fencing, patios & decking
+                </div>
+
+                <div class="check">
+                    <div class="check-icon">✓</div>
+                    Grass & hedge cutting
+                </div>
+
+                <div class="check">
+                    <div class="check-icon">✓</div>
+                    Pergolas & bespoke landscaping
+                </div>
+
+                <div class="check">
+                    <div class="check-icon">✓</div>
+                    Pressure washing & fence painting
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+    <div class="container">
+
+        <div class="services-head reveal">
+
+            <div>
+
+                <div class="section-tag">
+                    What We Do
+                </div>
+
+                <h2 class="section-title">
+                    Complete garden care.
+                </h2>
+
+            </div>
+
+            <p class="section-text">
+                From small garden maintenance jobs to larger landscaping
+                projects, choose the service your outdoor space needs.
+            </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+
+            <div class="service-card reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1000&q=85"
+                    alt="Garden maintenance"
+                >
+
+                <div class="service-content">
+
+                    <div class="service-icon">
+                        🌿
+                    </div>
+
+                    <h3>
+                        Garden Maintenance
+                    </h3>
+
+                    <p>
+                        Keep your garden looking neat, healthy and cared for
+                        throughout the year.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="service-card reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&w=1000&q=85"
+                    alt="Garden landscaping"
+                >
+
+                <div class="service-content">
+
+                    <div class="service-icon">
+                        🏡
+                    </div>
+
+                    <h3>
+                        Landscaping
+                    </h3>
+
+                    <p>
+                        Bespoke outdoor spaces designed around your garden,
+                        property and lifestyle.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="service-card reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1599685315640-7c7b9b4f4e65?auto=format&fit=crop&w=1000&q=85"
+                    alt="Garden fencing"
+                >
+
+                <div class="service-content">
+
+                    <div class="service-icon">
+                        🪵
+                    </div>
+
+                    <h3>
+                        Fencing
+                    </h3>
+
+                    <p>
+                        Practical and attractive fencing solutions for your
+                        garden and outdoor space.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="service-card reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1000&q=85"
+                    alt="Patio and decking"
+                >
+
+                <div class="service-content">
+
+                    <div class="service-icon">
+                        🧱
+                    </div>
+
+                    <h3>
+                        Patios & Decking
+                    </h3>
+
+                    <p>
+                        Create an outdoor area that's perfect for relaxing,
+                        entertaining and enjoying summer.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="service-card reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?auto=format&fit=crop&w=1000&q=85"
+                    alt="Lawn and hedge cutting"
+                >
+
+                <div class="service-content">
+
+                    <div class="service-icon">
+                        ✂️
+                    </div>
+
+                    <h3>
+                        Grass & Hedges
+                    </h3>
+
+                    <p>
+                        Lawn cutting and hedge work to keep your garden clean
+                        and well maintained.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="service-card reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=85"
+                    alt="Garden pergola"
+                >
+
+                <div class="service-content">
+
+                    <div class="service-icon">
+                        🌳
+                    </div>
+
+                    <h3>
+                        Pergolas & More
+                    </h3>
+
+                    <p>
+                        Add character and functionality to your outdoor space
+                        with bespoke garden features.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- BANNER -->
+
+<section class="banner">
+
+    <div class="container">
+
+        <div class="banner-content reveal">
+
+            <div class="section-tag">
+                Transform Your Outdoor Space
+            </div>
+
+            <h2>
+                Your garden deserves
+                to be enjoyed.
+            </h2>
+
+            <p>
+                Whether it's a garden tidy-up, new fencing, a patio or a
+                complete landscaping project, let's create an outdoor space
+                you'll love coming home to.
+            </p>
+
+            <a href="#contact" class="btn btn-primary">
+                Get Your Free Quote →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section class="gallery" id="gallery">
+
+    <div class="container">
+
+        <div class="gallery-head reveal">
+
+            <div>
+
+                <div class="section-tag">
+                    Our Work
+                </div>
+
+                <h2 class="section-title">
+                    Garden inspiration.
+                </h2>
+
+            </div>
+
+            <p class="section-text">
+                A selection of visual examples for this website concept.
+                Replace these demo images with real project photographs.
+            </p>
+
+        </div>
+
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1558521958-0a228e77e984?auto=format&fit=crop&w=1300&q=90"
+                    alt="Garden transformation"
+                >
+
+                <div class="gallery-overlay">
+                    <strong>Garden Transformation</strong>
+                </div>
+
+            </div>
+
+
+            <div class="gallery-item reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1000&q=85"
+                    alt="Garden maintenance"
+                >
+
+                <div class="gallery-overlay">
+                    <strong>Garden Maintenance</strong>
+                </div>
+
+            </div>
+
+
+            <div class="gallery-item reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&w=1000&q=85"
+                    alt="Landscape design"
+                >
+
+                <div class="gallery-overlay">
+                    <strong>Landscaping</strong>
+                </div>
+
+            </div>
+
+
+            <div class="gallery-item reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1599685315640-7c7b9b4f4e65?auto=format&fit=crop&w=1000&q=85"
+                    alt="Fencing project"
+                >
+
+                <div class="gallery-overlay">
+                    <strong>Fencing</strong>
+                </div>
+
+            </div>
+
+
+            <div class="gallery-item reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1000&q=85"
+                    alt="Patio garden"
+                >
+
+                <div class="gallery-overlay">
+                    <strong>Patios & Outdoor Spaces</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- WHY CHOOSE US -->
+
+<section class="why">
+
+    <div class="container">
+
+        <div class="reveal">
+
+            <div class="section-tag">
+                Why Choose Us
+            </div>
+
+            <h2 class="section-title">
+                Practical work.
+                Beautiful results.
+            </h2>
+
+        </div>
+
+
+        <div class="why-grid">
+
+
+            <div class="why-card reveal">
+
+                <div class="why-icon">
+                    🌿
+                </div>
+
+                <h3>
+                    Garden Focused
+                </h3>
+
+                <p>
+                    Services designed around keeping your outdoor space
+                    looking clean, attractive and usable.
+                </p>
+
+            </div>
+
+
+            <div class="why-card reveal">
+
+                <div class="why-icon">
+                    🛠️
+                </div>
+
+                <h3>
+                    Wide Range
+                </h3>
+
+                <p>
+                    Gardening, fencing, patios, decking, pergolas,
+                    painting and landscaping all in one place.
+                </p>
+
+            </div>
+
+
+            <div class="why-card reveal">
+
+                <div class="why-icon">
+                    ⭐
+                </div>
+
+                <h3>
+                    5.0 Rated
+                </h3>
+
+                <p>
+                    Listed with a 5.0/5 rating and 5+ reviews in available
+                    business information.
+                </p>
+
+            </div>
+
+
+            <div class="why-card reveal">
+
+                <div class="why-icon">
+                    📍
+                </div>
+
+                <h3>
+                    Local Service
+                </h3>
+
+                <p>
+                    Based in Buntingford and serving local homeowners and
+                    surrounding areas.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- AREAS -->
+
+<section class="areas" id="areas">
+
+    <div class="container areas-grid">
+
+        <div class="area-image reveal">
+
+            <img
+                src="https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?auto=format&fit=crop&w=1400&q=90"
+                alt="Beautiful home garden"
+            >
+
+        </div>
+
+
+        <div class="reveal">
+
+            <div class="section-tag">
+                Local Gardening Services
+            </div>
+
+            <h2 class="section-title">
+                Serving Buntingford & surrounding areas.
+            </h2>
+
+            <p class="section-text">
+                Looking for help with your garden? Get in touch to discuss
+                your project and request a quote.
+            </p>
+
+            <div class="area-list">
+
+                <div class="area">
+                    <span>●</span> Buntingford
+                </div>
+
+                <div class="area">
+                    <span>●</span> Puckeridge
+                </div>
+
+                <div class="area">
+                    <span>●</span> Ware
+                </div>
+
+                <div class="area">
+                    <span>●</span> Hertfordshire
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+    <div class="cta-box reveal">
+
+        <div>
+
+            <h2>
+                Ready to improve your garden?
+            </h2>
+
+            <p>
+                Tell us what you need and request a free quote.
+            </p>
+
+        </div>
+
+        <a href="#contact" class="btn btn-primary">
+            Request a Quote →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <div class="container contact-grid">
+
+
+        <div class="reveal">
+
+            <div class="section-tag">
+                Get In Touch
+            </div>
+
+            <h2 class="section-title">
+                Let's talk about your garden.
+            </h2>
+
+            <p class="section-text">
+                Have a garden that needs some attention? Contact Puckeridge
+                Gardener to discuss your requirements.
+            </p>
+
+
+            <div class="contact-details">
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        📞
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Phone
+                        </strong>
+
+                        <span>
+                            <a href="tel:07948757898">
+                                07948 757898
+                            </a>
+                            <br>
+
+                            <a href="tel:07432574293">
+                                07432 574293
+                            </a>
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        ✉️
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Email
+                        </strong>
+
+                        <span>
+                            <a href="mailto:puckeridgegardener@hotmail.co.uk">
+                                puckeridgegardener@hotmail.co.uk
+                            </a>
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        📍
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Address
+                        </strong>
+
+                        <span>
+                            7 The Folly,<br>
+                            Buntingford,<br>
+                            SG9 9EB
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        ⭐
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Customer Rating
+                        </strong>
+
+                        <span>
+                            5.0/5 — 5+ reviews
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- FORM -->
+
+        <div class="contact-form reveal">
+
+            <h3>
+                Request a Free Quote
+            </h3>
+
+            <form id="quoteForm">
+
+                <div class="form-row">
+
+                    <input
+                        type="text"
+                        placeholder="Your name"
+                        required
+                    >
+
+                    <input
+                        type="tel"
+                        placeholder="Phone number"
+                        required
+                    >
+
+                </div>
+
+                <input
+                    type="email"
+                    placeholder="Email address"
+                    required
+                >
+
+                <select required>
+
+                    <option value="">
+                        What service do you need?
+                    </option>
+
+                    <option>
+                        Garden Tidy-Up
+                    </option>
+
+                    <option>
+                        Garden Maintenance
+                    </option>
+
+                    <option>
+                        Fencing
+                    </option>
+
+                    <option>
+                        Patios / Decking
+                    </option>
+
+                    <option>
+                        Grass / Hedge Cutting
+                    </option>
+
+                    <option>
+                        Pergola
+                    </option>
+
+                    <option>
+                        Pressure Washing
+                    </option>
+
+                    <option>
+                        Bespoke Landscaping
+                    </option>
+
+                </select>
+
+                <textarea
+                    placeholder="Tell us a little about your garden project..."
+                    required
+                ></textarea>
+
+                <button
+                    type="submit"
+                    class="btn btn-primary form-button"
+                >
+                    Send Quote Request →
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-grid">
+
+
+        <div class="footer-brand">
+
+            <div class="logo">
+
+                <div class="logo-mark">
+                    🌿
+                </div>
+
+                <div class="logo-text">
+                    <strong>Puckeridge Gardener</strong>
+                    <span>BUNTINGFORD • HERTFORDSHIRE</span>
+                </div>
+
+            </div>
+
+            <p>
+                Professional gardening, landscaping and outdoor improvement
+                services for homes around Buntingford.
+            </p>
+
+        </div>
+
+
+        <div class="footer-col">
+
+            <h4>
+                Services
+            </h4>
+
+            <a href="#services">
+                Garden Maintenance
+            </a>
+
+            <a href="#services">
+                Landscaping
+            </a>
+
+            <a href="#services">
+                Fencing
+            </a>
+
+            <a href="#services">
+                Patios & Decking
+            </a>
+
+            <a href="#services">
+                Grass & Hedge Cutting
+            </a>
+
+        </div>
+
+
+        <div class="footer-col">
+
+            <h4>
+                Contact
+            </h4>
+
+            <a href="tel:07948757898">
+                07948 757898
+            </a>
+
+            <a href="tel:07432574293">
+                07432 574293
+            </a>
+
+            <a href="mailto:puckeridgegardener@hotmail.co.uk">
+                Email Us
+            </a>
+
+            <a href="#contact">
+                Request a Quote
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 Puckeridge Gardener — Demo Website Concept
+        </span>
+
+        <span>
+            Website concept created for presentation purposes.
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- FLOATING CALL -->
+
+<a
+    href="tel:07948757898"
+    class="float-call"
+    title="Call Puckeridge Gardener"
+>
+    ☎
+</a>
+
+
+<script>
+
+/* =========================
+   NAVBAR SCROLL
+========================= */
+
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll", () => {
+
+    if(window.scrollY > 60){
+        navbar.classList.add("scrolled");
+    }else{
+        navbar.classList.remove("scrolled");
+    }
+
+});
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+
+    navLinks.classList.toggle("active");
+
+});
+
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navLinks.classList.remove("active");
+
+    });
+
+});
+
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+const reveals = document.querySelectorAll(".reveal");
+
+const revealObserver = new IntersectionObserver(
+
+    entries => {
+
+        entries.forEach(entry => {
+
+            if(entry.isIntersecting){
+
+                entry.target.classList.add("active");
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold:.12
+    }
+
+);
+
+reveals.forEach(el => {
+
+    revealObserver.observe(el);
+
+});
+
+
+/* =========================
+   DEMO FORM
+========================= */
+
+document.getElementById("quoteForm").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    alert(
+        "Thank you! This is a demo enquiry form. " +
+        "For the live website, submissions can be connected to email."
+    );
+
+});
+
+</script>
+
+</body>
+</html>
